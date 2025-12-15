@@ -23,7 +23,7 @@ def generate_gold_code(length):
         code.append(out_a ^ out_b)
         
         # Feedback
-        fb_a = reg_a[2] ^ reg_a[4]
+        fb_a = reg_a[1] ^ reg_a[4]
         fb_b = reg_b[0] ^ reg_b[1] ^ reg_b[2] ^ reg_b[4]
         
         # Shift
