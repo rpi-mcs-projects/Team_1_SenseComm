@@ -11,6 +11,8 @@ def generate_gold_code(length):
     Generates a Gold Code sequence of length 31.
     (Polynomials: x^5 + x^2 + 1 and x^5 + x^4 + x^3 + x^2 + 1)
     """     
+    #Just fully helps generate a random sequence of 1s and 0s which are mapped to +1 and -1. It XORs the "slot" we picked 
+    #from the given polynomial, which we can choose to be anything, and XORs those together to deterimine the bit to add to our array
     # LFSR A: x^5 + x^2 + 1
     reg_a = np.ones(5, dtype=int)
     # LFSR B: x^5 + x^4 + x^3 + x^2 + 1
