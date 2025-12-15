@@ -10,10 +10,7 @@ def generate_gold_code(length):
     """
     Generates a Gold Code sequence of length 31.
     (Polynomials: x^5 + x^2 + 1 and x^5 + x^4 + x^3 + x^2 + 1)
-    """
-    if length != 31:
-        raise ValueError("Only length 31 supported for this simple demo")
-        
+    """     
     # LFSR A: x^5 + x^2 + 1
     reg_a = np.ones(5, dtype=int)
     # LFSR B: x^5 + x^4 + x^3 + x^2 + 1
