@@ -13,6 +13,9 @@ def generate_gold_code(length):
     """     
     #Just fully helps generate a random sequence of 1s and 0s which are mapped to +1 and -1. It XORs the "slot" we picked 
     #from the given polynomial, which we can choose to be anything, and XORs those together to deterimine the bit to add to our array
+    #And whatever XOR bit is created is added to our reg_a and reg_b, and that last bit is popped out, so we can continue with our sequence
+
+    
     # LFSR A: x^5 + x^2 + 1
     reg_a = np.ones(5, dtype=int)
     # LFSR B: x^5 + x^4 + x^3 + x^2 + 1
