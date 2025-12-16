@@ -1,6 +1,6 @@
 OFDM Common --> Holds common functions used in ofdm_presentation (adding noise, constellation)
 
-OFDM_presentation --> Used just for plotting and generating the gold codes. Just need to click the run button, and it should run and show all the plots: power comparison, constellation diagrams, and bit mapping
+OFDM_presentation --> Used just for plotting and generating the gold codes. Just need to click the run button, and it should run and show all the plots: power comparison, constellation diagrams, and bit mapping (correlation scores)
 
 ----------------------------------------------------------------------------------------------------------------
 
