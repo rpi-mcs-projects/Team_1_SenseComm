@@ -54,36 +54,6 @@ def qam_mapper(bits, mod_order, constellation):
     
     return constellation[indices]
 
-def qam_demapper(symbols, mod_order, constellation):
-    """
-    Demaps QAM symbols to bits using Minimum Euclidean Distance (ML).
-    
-    Args:
-        symbols (np.array): Received complex symbols.
-        mod_order (int): Modulation order.
-        constellation (np.array): QAM constellation points.
-        
-    Returns:
-        np.array: Detected bits.
-        np.array: Indices of the detected symbols in the constellation (optional use).
-    """
-    bits_per_symbol = int(np.log2(mod_order))
-    
-    # Compute distances to all constellation points
-    # symbols: (N,)
-    # constellation: (M,)
-    # dists: (N, M)
-    dists = np.abs(symbols[:, None] - constellation[None, :])**2
-    
-    # Find index of closest point
-    min_indices = np.argmin(dists, axis=1)
-    
-    # Convert indices back to bits
-    index_to_bits = np.array([list(np.binary_repr(i, width=bits_per_symbol)) for i in range(mod_order)], dtype=int)
-    detected_bits = index_to_bits[min_indices].flatten()
-    
-    return detected_bits, min_indices
-
 def apply_awgn(signal, snr_db):
     """
     Adds AWGN to a signal for a given SNR.
